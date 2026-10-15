@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: meta-stock-analysis-api
+    runtime: node
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: CORS_ORIGINS
+        value: https://mariblew.github.io,http://localhost:5173,http://127.0.0.1:5173
+      - key: TWELVEDATA_API_KEY
+        sync: false
