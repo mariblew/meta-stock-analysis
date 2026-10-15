@@ -2,6 +2,7 @@ services:
   - type: web
     name: meta-stock-analysis-api
     runtime: node
+    plan: free
     buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /healthz
